@@ -1,0 +1,17 @@
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\bin\Debug\net6.0-windows\RelogioHorasTrabalhadas.exe
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\bin\Debug\net6.0-windows\RelogioHorasTrabalhadas.deps.json
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\bin\Debug\net6.0-windows\RelogioHorasTrabalhadas.runtimeconfig.json
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\bin\Debug\net6.0-windows\RelogioHorasTrabalhadas.dll
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\bin\Debug\net6.0-windows\RelogioHorasTrabalhadas.pdb
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.csproj.AssemblyReference.cache
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.Form1.resources
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.csproj.GenerateResource.cache
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.AssemblyInfoInputs.cache
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.AssemblyInfo.cs
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.csproj.CoreCompileInputs.cache
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.dll
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\refint\RelogioHorasTrabalhadas.dll
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.pdb
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\RelogioHorasTrabalhadas.genruntimeconfig.cache
+C:\Users\brunsker\Desktop\Projects\pessoais\RelogioHorasTrabalhadas\RelogioHorasTrabalhadas\obj\Debug\net6.0-windows\ref\RelogioHorasTrabalhadas.dll
