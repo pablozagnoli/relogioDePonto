@@ -16,8 +16,11 @@ namespace RelogioHorasTrabalhadas
         static readonly HttpClient client = new HttpClient();
         static string token = "";
         static login formLogin = new login();
-        static retornoDto retornoDadosUsuario;
-        static horasUsuario HorasUsuario = new horasUsuario();
+        static retornoDto retornoDadosUsuario = new retornoDto() { afdt = new List<afdtt>() };
+        static horasUsuario HorasUsuarioPrimeiraEntrada = new horasUsuario();
+        static horasUsuario HorasUsuarioSegundaEntrada = new horasUsuario();
+        static horasUsuario HorasUsuarioPrimeiraSaida = new horasUsuario();
+        static horasUsuario HorasUsuarioSegundaSaida = new horasUsuario();
         static int count3horas = 0;
 
         public Form1()
@@ -41,10 +44,10 @@ namespace RelogioHorasTrabalhadas
             }
 
             token = formLogin.getValorToken();
+            retornoDadosUsuario = null;
             retornoDadosUsuario = RequestRhId.DadosUsuarioRhIdRequest(token: token);
             calcularHoras();
-
-            lbBemVindo.Text = lbBemVindo.Text + " " +retornoDadosUsuario.nome;
+            lbBemVindo.Text = lbBemVindo.Text + " " + retornoDadosUsuario.nome;
             atribuirValorDasHoras();
             atribuirValorAosCampos();
             minimiarParaBarraEBandeja();
@@ -52,27 +55,82 @@ namespace RelogioHorasTrabalhadas
 
         private void atribuirValorDasHoras()
         {
-            HorasUsuario.Ano = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(0, 4);
-            HorasUsuario.Mes = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(4, 2);
-            HorasUsuario.Dia = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(6, 2);
-            HorasUsuario.Horas = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(8, 2);
-            HorasUsuario.Minutos = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(10, 2);            
+            if (retornoDadosUsuario.afdt.Count > 0)
+            {
+                HorasUsuarioPrimeiraEntrada.Ano = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(0, 4);
+                HorasUsuarioPrimeiraEntrada.Mes = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(4, 2);
+                HorasUsuarioPrimeiraEntrada.Dia = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(6, 2);
+                HorasUsuarioPrimeiraEntrada.Horas = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(8, 2);
+                HorasUsuarioPrimeiraEntrada.Minutos = retornoDadosUsuario.afdt[0].dateTimeStr.Substring(10, 2);
+            }
+
+            if (retornoDadosUsuario.afdt.Count > 1)
+            {
+                HorasUsuarioPrimeiraSaida.Ano = retornoDadosUsuario.afdt[1].dateTimeStr.Substring(0, 4);
+                HorasUsuarioPrimeiraSaida.Mes = retornoDadosUsuario.afdt[1].dateTimeStr.Substring(4, 2);
+                HorasUsuarioPrimeiraSaida.Dia = retornoDadosUsuario.afdt[1].dateTimeStr.Substring(6, 2);
+                HorasUsuarioPrimeiraSaida.Horas = retornoDadosUsuario.afdt[1].dateTimeStr.Substring(8, 2);
+                HorasUsuarioPrimeiraSaida.Minutos = retornoDadosUsuario.afdt[1].dateTimeStr.Substring(10, 2);
+            }
+
+            if (retornoDadosUsuario.afdt.Count > 2)
+            {
+                HorasUsuarioSegundaEntrada.Ano = retornoDadosUsuario.afdt[2].dateTimeStr.Substring(0, 4);
+                HorasUsuarioSegundaEntrada.Mes = retornoDadosUsuario.afdt[2].dateTimeStr.Substring(4, 2);
+                HorasUsuarioSegundaEntrada.Dia = retornoDadosUsuario.afdt[2].dateTimeStr.Substring(6, 2);
+                HorasUsuarioSegundaEntrada.Horas = retornoDadosUsuario.afdt[2].dateTimeStr.Substring(8, 2);
+                HorasUsuarioSegundaEntrada.Minutos = retornoDadosUsuario.afdt[2].dateTimeStr.Substring(10, 2);
+            }
+
+            if (retornoDadosUsuario.afdt.Count > 3)
+            {
+                HorasUsuarioSegundaSaida.Ano = retornoDadosUsuario.afdt[3].dateTimeStr.Substring(0, 4);
+                HorasUsuarioSegundaSaida.Mes = retornoDadosUsuario.afdt[3].dateTimeStr.Substring(4, 2);
+                HorasUsuarioSegundaSaida.Dia = retornoDadosUsuario.afdt[3].dateTimeStr.Substring(6, 2);
+                HorasUsuarioSegundaSaida.Horas = retornoDadosUsuario.afdt[3].dateTimeStr.Substring(8, 2);
+                HorasUsuarioSegundaSaida.Minutos = retornoDadosUsuario.afdt[3].dateTimeStr.Substring(10, 2);
+            }
+
         }
 
         private void atribuirValorAosCampos()
         {
-            mskBPrimeiraEntrada.Text = HorasUsuario.Horas + ":" + HorasUsuario.Minutos;
-            
+            mskBPrimeiraEntrada.Text = HorasUsuarioPrimeiraEntrada.Horas + ":" + HorasUsuarioPrimeiraEntrada.Minutos;
+
+
+
             if (mskBPrimeiraSaida.Text == null || mskBPrimeiraSaida.Text == "  :")
             {
-                mskBPrimeiraSaida.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+                if (retornoDadosUsuario.afdt.Count > 1)
+                {
+                    mskBPrimeiraSaida.Text = HorasUsuarioPrimeiraSaida.Horas + ":" + HorasUsuarioPrimeiraSaida.Minutos;
+                }
+            }
+
+
+            if (mskBSegundaEntrada.Text == null || mskBSegundaEntrada.Text == "  :")
+            {
+                if (retornoDadosUsuario.afdt.Count > 2)
+                {
+                    mskBSegundaEntrada.Text = HorasUsuarioSegundaEntrada.Horas + ":" + HorasUsuarioSegundaEntrada.Minutos;
+                }
+            }
+
+            if (mskBSegundaSaida.Text == null || mskBSegundaSaida.Text == "  :")
+            {
+                if (retornoDadosUsuario.afdt.Count > 3)
+                {
+                    mskBSegundaSaida.Text = HorasUsuarioSegundaEntrada.Horas + ":" + HorasUsuarioSegundaEntrada.Minutos;
+                }
             }
         }
 
         private void calcular_Horas()
         {
+            atribuirValorAosCampos();
             token = formLogin.getValorToken();
-            RequestRhId.DadosUsuarioRhIdRequest(token: token);
+            retornoDadosUsuario = null;
+            retornoDadosUsuario = RequestRhId.DadosUsuarioRhIdRequest(token: token);
             calcularHoras();
         }
 
@@ -81,10 +139,13 @@ namespace RelogioHorasTrabalhadas
 
             string inicio_1 = mskBPrimeiraEntrada.Text;
             string inicio_2 = mskBSegundaEntrada.Text;
-
+            inicio_1 = inicio_1 == null || inicio_1 == "  :" ? DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() : inicio_1;
+            inicio_2 = inicio_2 == null || inicio_2 == "  :" ? DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() : inicio_2;
 
             string fim_1 = mskBPrimeiraSaida.Text;
             string fim_2 = mskBSegundaSaida.Text;
+            fim_1 = fim_1 == null || fim_1 == "  :" ? DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() : fim_1;
+            fim_2 = fim_2 == null || fim_2 == "  :" ? DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() : fim_2;
             string total;
 
             TimeSpan p1;
@@ -92,14 +153,16 @@ namespace RelogioHorasTrabalhadas
 
 
 
-            if (fim_1 != null && fim_1 != "  :")
+            if (fim_1 != null && fim_1 != "  :"
+                && inicio_1 != null && inicio_1 != "  :")
             {
                 p1 = TimeSpan.Parse(fim_1).Subtract(TimeSpan.Parse(inicio_1));
 
                 primeiroResultado.Text = p1.ToString();
             }
 
-            if (fim_2 != null && fim_2 != "  :")
+            if (fim_2 != null && fim_2 != "  :"
+                && inicio_2 != null && inicio_2 != "  :")
             {
                 p2 = TimeSpan.Parse(fim_2).Subtract(TimeSpan.Parse(inicio_2));
 
@@ -125,7 +188,7 @@ namespace RelogioHorasTrabalhadas
             if (TimeSpan.Parse(primeiroResultado.Text) > TimeSpan.Parse("03:00") && count3horas < 1)
             {
                 MessageBox.Show("3 horas de trabalho", "3 horas de trabalho", MessageBoxButtons.OK);
-                count3horas ++;
+                count3horas++;
             }
         }
 
