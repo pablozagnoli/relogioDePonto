@@ -1,0 +1,6 @@
+C:\Users\brunsker\Desktop\publish\RelogioHorasTrabalhadas.exe
+C:\Users\brunsker\Desktop\publish\RelogioHorasTrabalhadas.dll
+C:\Users\brunsker\Desktop\publish\RelogioHorasTrabalhadas.deps.json
+C:\Users\brunsker\Desktop\publish\RelogioHorasTrabalhadas.runtimeconfig.json
+C:\Users\brunsker\Desktop\publish\RelogioHorasTrabalhadas.pdb
+C:\Users\brunsker\Desktop\publish\Newtonsoft.Json.dll

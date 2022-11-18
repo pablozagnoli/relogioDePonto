@@ -6,6 +6,7 @@ using System.Security.Policy;
 using System.Text;
 using Newtonsoft.Json.Linq;
 using RelogioHorasTrabalhadas.Services;
+using System.Windows.Forms;
 
 namespace RelogioHorasTrabalhadas
 {
@@ -45,6 +46,7 @@ namespace RelogioHorasTrabalhadas
             lbBemVindo.Text = lbBemVindo.Text + " " +retornoDadosUsuario.nome;
             atribuirValorDasHoras();
             atribuirValorAosCampos();
+            minimiarParaBarraEBandeja();
         }
 
         private void atribuirValorDasHoras()
@@ -102,17 +104,59 @@ namespace RelogioHorasTrabalhadas
 
                 primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text) + p2).ToString();
             }
-            resultadoTotal.Text = (TimeSpan.Parse(primeiroResultado.Text)).ToString();
+            primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text)).ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             calcular_Horas();
+
+            if (TimeSpan.Parse(primeiroResultado.Text) > TimeSpan.Parse("05:30") && TimeSpan.Parse(primeiroResultado.Text) < TimeSpan.Parse("05:32"))
+            {
+                MessageBox.Show("Faltam 30 minutos para o horario de descanso", "Faltam 30 minutos para o horario de descanso", MessageBoxButtons.OK);
+            }
+
+            if (TimeSpan.Parse(primeiroResultado.Text) == TimeSpan.Parse("06:00"))
+            {
+                MessageBox.Show("Voce atingiu " + primeiroResultado.Text + " horas trabalhdas!!", "Voce atingiu " + primeiroResultado.Text + " horas trabalhdas!!", MessageBoxButtons.OK);
+            }
+
+            if (TimeSpan.Parse(primeiroResultado.Text) > TimeSpan.Parse("03:00"))
+            {
+                MessageBox.Show("3 horas de trabalho", "3 horas de trabalho", MessageBoxButtons.OK);
+            }
         }
 
         private void primeiroResultado_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Visible = true;
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+            notifyIcon1.Visible = false;
+        }
+
+        private void minimiarParaBarraEBandeja()
+        {
+            this.Visible = false;
+            this.ShowInTaskbar = false;
+            this.WindowState = FormWindowState.Minimized;
+            notifyIcon1.Visible = true;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Visible = false;
+                this.ShowInTaskbar = false;
+                this.WindowState = FormWindowState.Minimized;
+                notifyIcon1.Visible = true;
+            }
         }
     }
 }

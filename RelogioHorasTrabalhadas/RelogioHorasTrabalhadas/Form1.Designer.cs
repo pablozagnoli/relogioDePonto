@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -38,11 +39,12 @@
             this.mskBPrimeiraSaida = new System.Windows.Forms.MaskedTextBox();
             this.mskBSegundaEntrada = new System.Windows.Forms.MaskedTextBox();
             this.mskBSegundaSaida = new System.Windows.Forms.MaskedTextBox();
-            this.resultadoTotal = new System.Windows.Forms.Label();
             this.lbBemVindo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -128,15 +130,6 @@
             this.mskBSegundaSaida.TabIndex = 40;
             this.mskBSegundaSaida.ValidatingType = typeof(System.DateTime);
             // 
-            // resultadoTotal
-            // 
-            this.resultadoTotal.AutoSize = true;
-            this.resultadoTotal.Location = new System.Drawing.Point(596, 58);
-            this.resultadoTotal.Name = "resultadoTotal";
-            this.resultadoTotal.Size = new System.Drawing.Size(87, 15);
-            this.resultadoTotal.TabIndex = 54;
-            this.resultadoTotal.Text = "Resultado Total";
-            // 
             // lbBemVindo
             // 
             this.lbBemVindo.AutoSize = true;
@@ -169,6 +162,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "teste";
+            this.notifyIcon1.BalloonTipTitle = "teste";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Meu Ponto RHID";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -177,7 +185,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbBemVindo);
-            this.Controls.Add(this.resultadoTotal);
             this.Controls.Add(this.mskBSegundaSaida);
             this.Controls.Add(this.mskBSegundaEntrada);
             this.Controls.Add(this.mskBPrimeiraSaida);
@@ -190,6 +197,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,10 +214,11 @@
         private MaskedTextBox mskBPrimeiraSaida;
         private MaskedTextBox mskBSegundaEntrada;
         private MaskedTextBox mskBSegundaSaida;
-        private Label resultadoTotal;
         private Label lbBemVindo;
         private Label label2;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }
