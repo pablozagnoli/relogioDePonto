@@ -56,6 +56,7 @@
             // 
             this.tbSenha.Location = new System.Drawing.Point(34, 122);
             this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(267, 23);
             this.tbSenha.TabIndex = 2;
             // 

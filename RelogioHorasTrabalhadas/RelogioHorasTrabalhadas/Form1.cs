@@ -18,6 +18,7 @@ namespace RelogioHorasTrabalhadas
         static login formLogin = new login();
         static retornoDto retornoDadosUsuario;
         static horasUsuario HorasUsuario = new horasUsuario();
+        static int count3horas = 0;
 
         public Form1()
         {
@@ -121,9 +122,10 @@ namespace RelogioHorasTrabalhadas
                 MessageBox.Show("Voce atingiu " + primeiroResultado.Text + " horas trabalhdas!!", "Voce atingiu " + primeiroResultado.Text + " horas trabalhdas!!", MessageBoxButtons.OK);
             }
 
-            if (TimeSpan.Parse(primeiroResultado.Text) > TimeSpan.Parse("03:00"))
+            if (TimeSpan.Parse(primeiroResultado.Text) > TimeSpan.Parse("03:00") && count3horas < 1)
             {
                 MessageBox.Show("3 horas de trabalho", "3 horas de trabalho", MessageBoxButtons.OK);
+                count3horas ++;
             }
         }
 
