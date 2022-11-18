@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj": {}
+    "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj": {
+    "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
+        "projectUniqueName": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
         "projectName": "RelogioHorasTrabalhadas",
-        "projectPath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
+        "projectPath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
         "packagesPath": "C:\\Users\\brunsker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\obj\\",
+        "outputPath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

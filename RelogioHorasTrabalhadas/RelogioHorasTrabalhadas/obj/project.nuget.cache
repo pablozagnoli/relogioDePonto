@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZpXVIn67VcM2bpauYmtJ7HgronZrIMNAeYZRo2bIqwwIg8SMYzIO4EE/EwB5IGorWRjbF9pzWMe9UrotmUWkag==",
+  "dgSpecHash": "U3pChEdRga+Yis4ssQ2VHwO2RUjusRI5H2/rfind5iam7H1GfUgE4LPgxp+JmRXLnFvpSwT+TI+YGbINjj4P+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\brunsker\\Desktop\\Projects\\pessoais\\relogioDePonto\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas\\RelogioHorasTrabalhadas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brunsker\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
