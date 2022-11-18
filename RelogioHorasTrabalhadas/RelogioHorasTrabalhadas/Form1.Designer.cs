@@ -92,7 +92,6 @@
             this.primeiroResultado.Size = new System.Drawing.Size(13, 15);
             this.primeiroResultado.TabIndex = 33;
             this.primeiroResultado.Text = "0";
-            this.primeiroResultado.Click += new System.EventHandler(this.primeiroResultado_Click);
             // 
             // mskBPrimeiraEntrada
             // 

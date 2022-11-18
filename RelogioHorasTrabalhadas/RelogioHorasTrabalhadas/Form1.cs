@@ -101,6 +101,9 @@ namespace RelogioHorasTrabalhadas
 
             if (mskBPrimeiraSaida.Text == null || mskBPrimeiraSaida.Text == "  :")
             {
+                if (retornoDadosUsuario == null)
+                    retornoDadosUsuario = new retornoDto() { afdt = new List<afdtt>()};
+
                 if (retornoDadosUsuario.afdt.Count > 1)
                 {
                     mskBPrimeiraSaida.Text = HorasUsuarioPrimeiraSaida.Horas + ":" + HorasUsuarioPrimeiraSaida.Minutos;
@@ -168,7 +171,17 @@ namespace RelogioHorasTrabalhadas
 
                 primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text) + p2).ToString();
             }
-            primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text)).ToString();
+
+            if (mskBPrimeiraSaida.Text != null && mskBPrimeiraSaida.Text != "  :"
+                && mskBSegundaEntrada.Text != null && mskBSegundaEntrada.Text != "  :")
+            {
+                var hoarioAlmoco = TimeSpan.Parse(mskBPrimeiraSaida.Text).Subtract(TimeSpan.Parse(mskBSegundaEntrada.Text));
+                primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text).Add(hoarioAlmoco)).ToString();
+            }
+            else
+            {
+                primeiroResultado.Text = (TimeSpan.Parse(primeiroResultado.Text)).ToString();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -190,11 +203,6 @@ namespace RelogioHorasTrabalhadas
                 MessageBox.Show("3 horas de trabalho", "3 horas de trabalho", MessageBoxButtons.OK);
                 count3horas++;
             }
-        }
-
-        private void primeiroResultado_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
